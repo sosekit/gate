@@ -1,0 +1,11 @@
+{
+  "name": "fools-gate",
+  "private": true,
+  "scripts": {
+    "build": "esbuild scripts/shop-3d.js --bundle --format=iife --target=es2020 --minify --outfile=scripts/shop-3d.bundle.js",
+    "watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.6"
+  }
+}

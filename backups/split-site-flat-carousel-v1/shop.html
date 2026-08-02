@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop — Fools Gate</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="index.html">fools gate</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="portfolio.html">portfolio</a>
+        <a href="shop.html" aria-current="page">shop</a>
+      </nav>
+    </header>
+
+    <main class="shop-shell">
+      <h1 class="page-title">shop</h1>
+      <section class="carousel" data-carousel aria-label="Products">
+        <button class="carousel-control" type="button" data-previous aria-label="Previous product" title="Previous product">←</button>
+        <div class="carousel-track" aria-live="polite">
+          <article class="product is-active" data-product>
+            <figure class="product-visual">product image 01</figure>
+            <div class="product-copy">
+              <h2>Object 01</h2>
+              <p>Placeholder description for the object, edition, material, and dimensions.</p>
+              <div class="price">$00.00</div>
+              <div class="availability">placeholder item</div>
+            </div>
+          </article>
+          <article class="product" data-product aria-hidden="true">
+            <figure class="product-visual">product image 02</figure>
+            <div class="product-copy">
+              <h2>Object 02</h2>
+              <p>Placeholder description for the object, edition, material, and dimensions.</p>
+              <div class="price">$00.00</div>
+              <div class="availability">placeholder item</div>
+            </div>
+          </article>
+          <article class="product" data-product aria-hidden="true">
+            <figure class="product-visual">product image 03</figure>
+            <div class="product-copy">
+              <h2>Object 03</h2>
+              <p>Placeholder description for the object, edition, material, and dimensions.</p>
+              <div class="price">$00.00</div>
+              <div class="availability">placeholder item</div>
+            </div>
+          </article>
+        </div>
+        <button class="carousel-control" type="button" data-next aria-label="Next product" title="Next product">→</button>
+      </section>
+
+      <div class="carousel-footer">
+        <span class="carousel-status" data-status>01 / 03</span>
+        <div class="carousel-dots" data-dots aria-label="Choose product"></div>
+      </div>
+    </main>
+
+    <script src="scripts/shop.js" defer></script>
+  </body>
+</html>

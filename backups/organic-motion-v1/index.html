@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fools Gate</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="ether" aria-label="Fools Gate">
+      <div class="depth-space" aria-hidden="true">
+        <span class="depth-plane plane-far"></span>
+        <span class="depth-plane plane-mid"></span>
+        <span class="depth-plane plane-near"></span>
+      </div>
+      <canvas class="organic-field" id="organic-field" aria-hidden="true"></canvas>
+      <div class="veil veil-deep" aria-hidden="true"></div>
+      <div class="veil veil-near" aria-hidden="true"></div>
+      <svg class="membrane-field" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="membrane-left" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"></stop>
+            <stop offset="0.46" stop-color="#fff" stop-opacity="0.22"></stop>
+            <stop offset="0.72" stop-color="#fff" stop-opacity="0.07"></stop>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+          </linearGradient>
+          <linearGradient id="membrane-right" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"></stop>
+            <stop offset="0.38" stop-color="#fff" stop-opacity="0.17"></stop>
+            <stop offset="0.68" stop-color="#fff" stop-opacity="0.05"></stop>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+          </linearGradient>
+          <linearGradient id="membrane-cross" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"></stop>
+            <stop offset="0.5" stop-color="#fff" stop-opacity="0.2"></stop>
+            <stop offset="0.74" stop-color="#fff" stop-opacity="0.04"></stop>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+          </linearGradient>
+          <filter id="membrane-soft" x="-35%" y="-35%" width="170%" height="170%">
+            <feGaussianBlur stdDeviation="13"></feGaussianBlur>
+          </filter>
+        </defs>
+        <path class="membrane membrane-a" fill="url(#membrane-left)" d="M -180 90 C 80 30 315 150 356 382 C 394 594 198 786 -138 884 C -224 660 -250 288 -180 90 Z"></path>
+        <path class="membrane membrane-b" fill="url(#membrane-right)" d="M 1180 -90 C 902 22 746 240 808 464 C 862 658 1090 746 1208 1060 L 1270 -110 Z"></path>
+        <path class="membrane membrane-c" fill="url(#membrane-cross)" d="M 48 -150 C 286 80 544 60 820 -112 C 702 136 520 258 286 222 C 148 202 78 82 48 -150 Z"></path>
+        <path class="membrane membrane-d" fill="url(#membrane-left)" d="M -120 1066 C 148 746 382 742 566 858 C 732 962 866 1118 1128 1038 C 820 1230 334 1212 -120 1066 Z"></path>
+        <path class="membrane membrane-e" fill="url(#membrane-cross)" d="M -130 760 C 138 566 350 308 690 258 C 846 236 1004 344 1140 534 C 842 424 604 470 382 654 C 182 816 18 884 -130 760 Z"></path>
+      </svg>
+      <div class="cursor-bloom" aria-hidden="true"></div>
+      <div class="memory-field" id="memory-field" aria-hidden="true"></div>
+    </main>
+
+    <script src="scripts/flow-field.bundle.js" defer></script>
+    <script src="scripts/layers.js" defer></script>
+  </body>
+</html>
