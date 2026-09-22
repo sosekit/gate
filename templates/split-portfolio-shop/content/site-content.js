@@ -12,9 +12,9 @@ window.FOOLS_GATE_CONTENT = {
     shopLabel: "Shop",
     contactLabel: "Contact",
     contactHref: "contact.html",
-    minimumRevealMs: 4300,
-    revealProgress: 0.5,
-    fallbackRevealMs: 5500
+    minimumRevealMs: 3600,
+    revealProgress: 0.42,
+    fallbackRevealMs: 4700
   },
   contact: {
     summary: "aidan kelley is a ",

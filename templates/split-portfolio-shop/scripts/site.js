@@ -43,12 +43,12 @@ if (siteContent) {
 
   const video = document.querySelector("[data-landing-video]");
   const source = document.querySelector("[data-landing-source]");
+  const landingFrame = document.querySelector(".landing-frame");
 
-  if (video && source) {
-    const changed = source.getAttribute("src") !== siteContent.landing.video;
-    const revealProgress = siteContent.landing.revealProgress ?? 0.5;
+  if (landingFrame) {
+    const revealProgress = siteContent.landing.revealProgress ?? 0.42;
     const revealStartedAt = performance.now();
-    const minimumRevealMs = siteContent.landing.minimumRevealMs ?? 4300;
+    const minimumRevealMs = siteContent.landing.minimumRevealMs ?? 3600;
     let isRevealed = false;
     let revealTimer;
 
@@ -63,21 +63,26 @@ if (siteContent) {
       }
 
       isRevealed = true;
-      document.querySelector(".landing-frame")?.classList.add("is-open");
+      landingFrame.classList.add("is-open");
     };
 
-    const syncRevealToVideo = () => {
-      if (video.duration && video.currentTime / video.duration >= revealProgress) {
-        revealEntry();
-      }
-    };
+    if (video && source) {
+      const changed = source.getAttribute("src") !== siteContent.landing.video;
+      const syncRevealToVideo = () => {
+        if (video.duration && video.currentTime / video.duration >= revealProgress) {
+          revealEntry();
+        }
+      };
 
-    source.setAttribute("src", siteContent.landing.video);
-    video.setAttribute("poster", siteContent.landing.poster);
-    video.addEventListener("timeupdate", syncRevealToVideo);
-    video.addEventListener("ended", revealEntry);
-    revealTimer = window.setTimeout(revealEntry, siteContent.landing.fallbackRevealMs ?? 5500);
-    if (changed) video.load();
-    syncRevealToVideo();
+      source.setAttribute("src", siteContent.landing.video);
+      video.setAttribute("poster", siteContent.landing.poster);
+      video.addEventListener("timeupdate", syncRevealToVideo);
+      video.addEventListener("ended", revealEntry);
+      revealTimer = window.setTimeout(revealEntry, siteContent.landing.fallbackRevealMs ?? 4700);
+      if (changed) video.load();
+      syncRevealToVideo();
+    } else {
+      revealTimer = window.setTimeout(revealEntry, minimumRevealMs);
+    }
   }
 }

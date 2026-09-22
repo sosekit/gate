@@ -46,9 +46,9 @@ if (siteContent) {
   const landingFrame = document.querySelector(".landing-frame");
 
   if (landingFrame) {
-    const revealProgress = siteContent.landing.revealProgress ?? 0.42;
+    const revealProgress = siteContent.landing.revealProgress ?? 0.5;
     const revealStartedAt = performance.now();
-    const minimumRevealMs = siteContent.landing.minimumRevealMs ?? 3600;
+    const minimumRevealMs = siteContent.landing.minimumRevealMs ?? 4300;
     let isRevealed = false;
     let revealTimer;
 
@@ -78,7 +78,7 @@ if (siteContent) {
       video.setAttribute("poster", siteContent.landing.poster);
       video.addEventListener("timeupdate", syncRevealToVideo);
       video.addEventListener("ended", revealEntry);
-      revealTimer = window.setTimeout(revealEntry, siteContent.landing.fallbackRevealMs ?? 4700);
+      revealTimer = window.setTimeout(revealEntry, siteContent.landing.fallbackRevealMs ?? 5500);
       if (changed) video.load();
       syncRevealToVideo();
     } else {
