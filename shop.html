@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>Shop — Aidan Kelley</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="shop-page" data-page="shop">
+    <header class="site-header">
+      <a class="wordmark" href="index.html" data-site-name>Aidan Kelley</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="portfolio.html" data-portfolio-label>portfolio</a>
+        <a href="shop.html" aria-current="page" data-shop-label>shop</a>
+      </nav>
+    </header>
+
+    <main class="object-shop">
+      <section class="object-carousel" data-object-carousel aria-label="Products">
+        <button class="object-control object-control-previous" type="button" data-previous aria-label="Previous product" title="Previous product">&lt;</button>
+
+        <div class="object-stage" data-object-stage>
+          <canvas class="product-scene" data-product-scene aria-hidden="true"></canvas>
+        </div>
+
+        <button class="object-control object-control-next" type="button" data-next aria-label="Next product" title="Next product">&gt;</button>
+      </section>
+
+      <section class="object-info" data-product-info aria-live="polite">
+        <h1 data-product-name>sdjhkdhfd</h1>
+        <p class="object-price" data-product-price>$00.00</p>
+        <p class="object-description" data-product-description>jshdf kjshdfk dhfksj.</p>
+      </section>
+
+    </main>
+
+    <script src="content/site-content.js" defer></script>
+    <script src="scripts/site.js" defer></script>
+    <script src="scripts/shop-3d.bundle.js" defer></script>
+  </body>
+</html>

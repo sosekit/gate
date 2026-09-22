@@ -1,0 +1,27 @@
+:root {
+  color-scheme: dark;
+  background: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #000000;
+}
+
+.portfolio-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.media-stack {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
