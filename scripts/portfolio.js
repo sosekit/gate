@@ -2,6 +2,8 @@ const projectList = document.querySelector("[data-project-list]");
 const projects = window.FOOLS_GATE_CONTENT?.projects || [];
 
 if (projectList) {
+  const fragment = document.createDocumentFragment();
+
   projects.forEach((project) => {
     const article = document.createElement("article");
     const media = document.createElement("figure");
@@ -20,6 +22,8 @@ if (projectList) {
       image.className = "project-image";
       image.src = project.image;
       image.alt = project.imageAlt;
+      image.loading = "lazy";
+      image.decoding = "async";
       media.appendChild(image);
     } else {
       media.setAttribute("aria-hidden", "true");
@@ -30,6 +34,8 @@ if (projectList) {
     meta.textContent = project.meta;
     copy.append(title, description, meta);
     article.append(media, copy);
-    projectList.appendChild(article);
+    fragment.appendChild(article);
   });
+
+  projectList.appendChild(fragment);
 }
