@@ -479,7 +479,7 @@ a:focus-visible {
 .object-info {
   width: min(560px, 100%);
   min-height: 76px;
-  margin-top: -78px;
+  margin-top: -102px;
   position: relative;
   z-index: 2;
   text-align: center;
@@ -566,7 +566,7 @@ a:focus-visible {
   }
 
   .object-carousel {
-    --arrow-offset: 85px;
+    --arrow-offset: 112px;
   }
 
   .object-stage {
@@ -581,7 +581,7 @@ a:focus-visible {
 
   .object-info {
     min-height: 72px;
-    margin-top: -54px;
+    margin-top: -78px;
   }
 }
 

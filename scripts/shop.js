@@ -12,11 +12,11 @@ if (carousel) {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const products = window.FOOLS_GATE_CONTENT?.products || [];
   const dimensions = {
-    "canvas-portrait": [182, 242],
-    "canvas-square": [214, 214],
-    "canvas-landscape": [252, 168],
-    "canvas-tall": [155, 273],
-    "canvas-wide": [273, 148]
+    "canvas-portrait": [146, 194],
+    "canvas-square": [171, 171],
+    "canvas-landscape": [202, 134],
+    "canvas-tall": [124, 218],
+    "canvas-wide": [218, 118]
   };
   let activeIndex = 0;
   let pointerStart = null;
@@ -59,7 +59,12 @@ if (carousel) {
   }
 
   function positionProducts() {
-    const spacing = Math.min(Math.max(stage.clientWidth * 0.2, 128), 220);
+    const compact = stage.clientWidth < 520;
+    const spacing = compact
+      ? Math.min(stage.clientWidth * 0.52, 205)
+      : Math.min(Math.max(stage.clientWidth * 0.28, 190), 255);
+    const sideScale = compact ? 0.56 : 0.68;
+    const farScale = compact ? 0.36 : 0.46;
 
     objects.forEach((object, index) => {
       const distance = signedDistance(index);
@@ -67,7 +72,7 @@ if (carousel) {
       object.style.setProperty("--carousel-x", `${distance * spacing}px`);
       object.style.setProperty("--carousel-y", `${depth * 10}px`);
       object.style.setProperty("--carousel-z", `${depth * -155}px`);
-      object.style.setProperty("--carousel-scale", depth === 0 ? "1" : depth === 1 ? "0.72" : "0.52");
+      object.style.setProperty("--carousel-scale", depth === 0 ? "1" : depth === 1 ? String(sideScale) : String(farScale));
       object.style.setProperty("--carousel-rotation", `${distance * -26}deg`);
       object.style.zIndex = String(10 - depth);
       object.classList.toggle("is-active", depth === 0);
