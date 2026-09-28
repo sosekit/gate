@@ -457,8 +457,8 @@ a:focus-visible {
   border-radius: 0;
   color: #a0a0a0;
   background: transparent;
-  font-family: "Old English Text MT", "Times New Roman", serif;
-  font-size: 18px;
+  font-family: "STIX Two Math", "Times New Roman", serif;
+  font-size: 13px;
   line-height: 1;
   cursor: pointer;
   transform: translateY(-50%);
