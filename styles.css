@@ -457,8 +457,9 @@ a:focus-visible {
   border-radius: 0;
   color: #a0a0a0;
   background: transparent;
-  font-family: "STIX Two Math", "Times New Roman", serif;
-  font-size: 13px;
+  font-family: "Old English Text MT", "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1;
   cursor: pointer;
   transform: translateY(-50%);
   transition: color 220ms ease;
@@ -479,7 +480,7 @@ a:focus-visible {
 .object-info {
   width: min(560px, 100%);
   min-height: 76px;
-  margin-top: -82px;
+  margin-top: -58px;
   position: relative;
   z-index: 2;
   text-align: center;
@@ -581,7 +582,7 @@ a:focus-visible {
 
   .object-info {
     min-height: 72px;
-    margin-top: -62px;
+    margin-top: -42px;
   }
 }
 

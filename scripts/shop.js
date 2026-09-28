@@ -61,8 +61,8 @@ if (carousel) {
   function positionProducts() {
     const compact = stage.clientWidth < 520;
     const spacing = compact
-      ? Math.min(stage.clientWidth * 0.52, 205)
-      : Math.min(Math.max(stage.clientWidth * 0.28, 190), 255);
+      ? Math.min(stage.clientWidth * 0.62, 240)
+      : Math.min(Math.max(stage.clientWidth * 0.34, 220), 315);
     const sideScale = compact ? 0.56 : 0.68;
     const farScale = compact ? 0.36 : 0.46;
 
