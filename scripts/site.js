@@ -1,5 +1,31 @@
 const siteContent = window.FOOLS_GATE_CONTENT;
 
+const finePointer = window.matchMedia("(pointer: fine)");
+
+if (finePointer.matches) {
+  const cursor = document.createElement("span");
+  let cursorFrame;
+
+  cursor.className = "ascii-cursor";
+  cursor.textContent = String.fromCodePoint(0x22b9);
+  cursor.setAttribute("aria-hidden", "true");
+  document.documentElement.classList.add("has-ascii-cursor");
+  document.body.appendChild(cursor);
+
+  window.addEventListener("pointermove", (event) => {
+    cancelAnimationFrame(cursorFrame);
+    cursorFrame = requestAnimationFrame(() => {
+      cursor.style.setProperty("--cursor-x", `${event.clientX}px`);
+      cursor.style.setProperty("--cursor-y", `${event.clientY}px`);
+      cursor.classList.add("is-visible");
+    });
+  }, { passive: true });
+
+  document.documentElement.addEventListener("pointerleave", () => {
+    cursor.classList.remove("is-visible");
+  });
+}
+
 if (siteContent) {
   document.querySelectorAll("[data-site-name]").forEach((element) => {
     element.textContent = siteContent.siteName;

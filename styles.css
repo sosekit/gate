@@ -39,6 +39,40 @@ input {
   font: inherit;
 }
 
+@media (pointer: fine) {
+  .has-ascii-cursor,
+  .has-ascii-cursor * {
+    cursor: none !important;
+  }
+
+  .ascii-cursor {
+    --cursor-x: -40px;
+    --cursor-y: -40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: grid;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    color: #ffffff;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1;
+    mix-blend-mode: difference;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%);
+    transition: opacity 120ms ease;
+    will-change: transform;
+  }
+
+  .ascii-cursor.is-visible {
+    opacity: 1;
+  }
+}
+
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid #0000ee;
