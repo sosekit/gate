@@ -477,6 +477,12 @@ a:focus-visible {
   color: #666666;
 }
 
+.object-control span {
+  display: block;
+  font-size: 17px;
+  animation: control-spin 5s linear infinite;
+}
+
 .object-info {
   width: min(560px, 100%);
   min-height: 76px;
@@ -529,6 +535,12 @@ a:focus-visible {
 
   50% {
     transform: translate3d(0, 6px, 0) rotateX(2deg) rotateY(3.5deg) rotateZ(0.8deg);
+  }
+}
+
+@keyframes control-spin {
+  to {
+    transform: rotate(1turn);
   }
 }
 
@@ -617,6 +629,10 @@ a:focus-visible {
   }
 
   .canvas-object {
+    animation: none;
+  }
+
+  .object-control span {
     animation: none;
   }
 }
